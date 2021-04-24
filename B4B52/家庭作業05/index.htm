@@ -1,0 +1,105 @@
+ <!DOCTYPE html>
+<html lang="zh">
+    
+<head>
+	<meta charset="UTF-8">
+   <title>家庭作業05</title>
+	<style>   
+        h4{
+            color:red;
+        }
+        div{
+            color:blue;
+            margin:5px;
+        }
+      
+    </style>
+    </head>
+    
+   <body>
+       <form id="form01">
+        姓名:<input type="text" name="01" value="朱冠潔"><br>
+        收件地址:<input type="text" name="address01" value="新北市板橋區中正路375巷14弄12號"><br>
+        電話:<input type="tel" name="tel01" value="0913883806"><br>
+        電子郵件:<input type="email" name="email01" value="a097851756@gmail.com"><br>
+        指定送貨日期:<input type="date" name="date01"><br>
+        鞋子種類:<br>
+           <input type="radio" name="shose" id="shose01" value="【New Balance】              復古鞋中性灰色">【New Balance】復古鞋中性灰色(一雙)2565元<br>
+           <input type="radio" name="shose" id="shose2" value="【New Balance】休       閒復古鞋牙白 210">【New Balance】休閒復古鞋牙白 210(1雙)1616元<br>
+              <input type="radio" name="shose" id="shose03" value="【New Balance】         輕量跑鞋男性黑色-D楦">【New Balance】輕量跑鞋男性黑色-D楦(1雙)2351元<br>
+              <input type="radio" name="shose" id="shose4" value="【New Balance】緩      震跑鞋女性黑色-D楦">【New Balance】緩震跑鞋女性黑色-D楦(1雙)1925元<br>
+               <input type="radio" name="shose" id="shose05" value="【New Balance】      復古運動鞋女性淺灰色-B楦">【New Balance】復古運動鞋女性淺灰色-B楦(1雙)2498元<br>
+        
+        
+</form>
+      
+          
+       <button onclick="shoppingInfo()"><h4>結帳</h4></button>
+       <div id="demo"></div>
+<script>
+       function shoppingInfo(){ 
+           var x =document.getElementById("form01");
+           var item ="";
+           var price =0;
+           var text ="<h4>您的購物資訊如下:</h4>";
+           var i;
+           text +="<table border='1' width='90%' cellspacing='0' cellpadding='0'>";
+      
+           for (i=0; i<5; i++){
+                text += "<tr>";
+               switch(i){
+                
+                   case 0:
+                       item ="姓名:";
+                       break;
+                   case 1:
+                       item ="收件住址:";
+                       break;
+                   case  2:
+                       item="電話:";
+                       break;
+                   case 3:
+                       item="電子郵件:";
+                       break;
+                   case 4:
+                       item="指定送貨日期:";
+                       break;         
+               }
+               text += "<td>" + item + "</td>" + "<td>" + x.elements[i].value +"</td>";
+               text += "</tr>";
+          
+           }
+           
+           
+           for(i=5;i<=9;i++){
+               if(x.elements[i].checked==true){
+                   switch(i){
+                       case 5: price=2565; break;
+                       case 6: price=1616; break;
+                       case 7: price=2351; break;
+                       case 8: price=1925; break;
+                       case 9: price=2498; break;    
+                   }
+                   text+="<tr><td>鞋子種類:</td>"+"<td>"+x.elements[i].value+"</td></tr>";
+                   text+="<tr><td>價格合計:</td>"+"<td>"+price+"元</td><tr>";
+        
+        
+               }
+               text +="</tr>";
+           }
+           text+="</table>";
+           document.getElementById("demo").innerHTML=text;
+       }
+      
+       
+            
+</script>
+         <h3>資料來源:</h3>
+		<ul>
+			<li><a href="https://shopee.tw/shop/131441298/search" target="_blank">參考網址</a></li>
+		</ul>
+
+</body>
+</html>     
+       
+   
