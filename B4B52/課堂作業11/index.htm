@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+	<meta charset="UTF-8">
+    <title>課堂作業11</title>
+	
+        <script src="jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+               $('#01').mouseover(function(){
+                   $("#01").attr("src","01-1.jpg");
+               }) 
+                $('#01').mouseleave(function(){
+                   $("#01").attr("src","01.jpg");
+               }) 
+              $('#02').mouseover(function(){
+                   $("#02").attr("src","02-1.jpg");
+               }) 
+                $('#02').mouseleave(function(){
+                   $("#02").attr("src","02.jpg");
+               }) 
+              $('#03').mouseover(function(){
+                   $("#03").attr("src","03-1.jpg");
+               }) 
+                $('#03').mouseleave(function(){
+                   $("#03").attr("src","03.jpg");
+               })    
+                $('#04').mouseover(function(){
+                   $("#04").attr("src","04-1.jpg");
+               }) 
+                $('#04').mouseleave(function(){
+                   $("#04").attr("src","04.jpg");
+               }) 
+            });
+        </script>
+    </head>
+    <body>
+    <table>
+        <tr>
+            <td>
+          <img src="01.jpg" id="01" width="60" height="60" alt="我">
+            </td>
+            <td>
+          <img src="02.jpg" id="02" width="60" height="60" alt="愛">
+            </td>
+            <td>
+          <img src="03.jpg" id="03" width="60" height="60" alt="大">
+            </td>
+          <td>
+          <img src="04.jpg" id="04" width="60" height="60" alt="同">
+            </td>
+         </tr>   
+            
+        </table>        
+    </body>
+
+</html>
